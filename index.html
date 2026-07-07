@@ -13,14 +13,13 @@
         t.src=v;s=b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
-        // ↓ここにMetaのピクセルIDを入れてください
         fbq('init', '1716167629437640');
         fbq('track', 'PageView');
     </script>
     <style>
         body, html {
             margin: 0;
-            padding: 0;
+            padding: 20px;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -28,38 +27,53 @@
             align-items: center;
             font-family: sans-serif;
             background-color: #ffffff;
+            box-sizing: border-box;
         }
+        /* 説明テキストのエリア */
+        .header-text {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        h1 { font-size: 1.4em; margin: 0 0 5px 0; color: #333; }
+        p.sub-title { font-size: 0.95em; color: #666; margin: 0; }
+
+        /* 画像サイズを縮小 */
         img {
-            max-width: 90%;
-            width: 400px;
+            max-width: 80%;
+            width: 250px; 
             height: auto;
             border-radius: 10px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         .cta-button {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 80%;
+            width: 90%;
             max-width: 300px;
-            padding: 20px 0;
+            padding: 18px 0;
             background-color: #06C755;
             color: #ffffff;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.1em;
             border-radius: 50px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
     </style>
 </head>
 <body>
+    <div class="header-text">
+        <h1>うちわん&うちにゃん</h1>
+        <p class="sub-title">可愛いペット動画を大募集中！</p>
+    </div>
+
     <img src="IMG_3323.JPG" alt="うちわん&うちにゃん">
+    
     <a href="https://lin.ee/OXUeS2x" class="cta-button" onclick="trackLead()">友だち追加して動画を送る</a>
 
     <script>
         function trackLead() {
-            // ボタンクリック時にLeadイベントを送信
             if(typeof fbq !== 'undefined') fbq('track', 'Lead');
         }
     </script>
