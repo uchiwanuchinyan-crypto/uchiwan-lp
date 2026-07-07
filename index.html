@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>うちわん&うちにゃん 動画募集</title>
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n.fn=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        // ↓ここにMetaのピクセルIDを入れてください
+        fbq('init', '1716167629437640');
+        fbq('track', 'PageView');
+    </script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            background-color: #ffffff;
+        }
+        img {
+            max-width: 90%;
+            width: 400px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+        .cta-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            max-width: 300px;
+            padding: 20px 0;
+            background-color: #06C755;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body>
+    <img src="IMG_3323.JPG" alt="うちわん&うちにゃん">
+    <a href="https://lin.ee/OXUeS2x" class="cta-button" onclick="trackLead()">友だち追加して動画を送る</a>
+
+    <script>
+        function trackLead() {
+            // ボタンクリック時にLeadイベントを送信
+            if(typeof fbq !== 'undefined') fbq('track', 'Lead');
+        }
+    </script>
+</body>
+</html>
