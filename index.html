@@ -18,27 +18,64 @@
     </script>
     <style>
         body, html {
-            margin: 0; padding: 20px; min-height: 100vh;
-            display: flex; flex-direction: column;
-            justify-content: center; align-items: center;
-            font-family: sans-serif; background-color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            background-color: #ffffff;
             box-sizing: border-box;
         }
-        .header-text { margin-bottom: 20px; text-align: center; }
+        /* 説明テキストのエリア */
+        .header-text {
+            margin-bottom: 20px;
+            text-align: center;
+        }
         h1 { font-size: 1.4em; margin: 0 0 5px 0; color: #333; }
         p.sub-title { font-size: 0.95em; color: #666; margin: 0; }
-        
-        /* 動画のスタイル */
-        .main-video {
-            width: 100%; max-width: 400px;
-            height: auto; border-radius: 10px;
+
+        /* 画像サイズを縮小 */
+        img {
+            max-width: 80%;
+            width: 250px; 
+            height: auto;
+            border-radius: 10px;
             margin-bottom: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         .cta-button {
-            display: flex; justify-content: center; align-items: center;
-            width: 90%; max-width: 300px; padding: 18px 0;
-            background-color: #06C755; color: #ffffff;
-            text-decoration: none; font-weight: bold;
-            border-radius: 50px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 90%;
+            max-width: 300px;
+            padding: 18px 0;
+            background-color: #06C755;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
+    </style>
+</head>
+<body>
+    <div class="header-text">
+        <h1>うちわん&うちにゃん</h1>
+        <p class="sub-title">可愛いペット動画を大募集中！</p>
+    </div>
+
+    <img src="IMG_3323.JPG" alt="うちわん&うちにゃん">
+    
+    <a href="https://lin.ee/OXUeS2x" class="cta-button" onclick="trackLead()">友だち追加して動画を送る</a>
+
+    <script>
+        function trackLead() {
+            if(typeof fbq !== 'undefined') fbq('track', 'Lead');
+        }
+    </script>
+</body>
+</html>
