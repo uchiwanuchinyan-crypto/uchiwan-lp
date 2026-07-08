@@ -57,16 +57,25 @@
 <body>
     <div class="header-text">
         <h1>うちわん&うちにゃん</h1>
-        <p class="sub-title">可愛いペット動画を大募集中！</p>
+        <p class="sub-title">可愛いワンちゃんの動画を大募集中！</p>
     </div>
 
-    <img src="IMG_3323.JPG" alt="うちわん&うちにゃん">
+    <!-- ここに看板犬二匹の画像を指定してください -->
+    <img src="IMG_3323.JPG" alt="うちわん看板犬">
     
     <a href="https://lin.ee/OXUeS2x" class="cta-button" onclick="trackLead()">友だち追加して動画を送る</a>
 
     <script>
         function trackLead() {
+            // Meta Pixelの計測
             if(typeof fbq !== 'undefined') fbq('track', 'Lead');
+            // GA4のクリックイベント計測
+            if(typeof gtag !== 'undefined') {
+                gtag('event', 'click_line_button', {
+                    'event_category': 'button',
+                    'event_label': 'line_add'
+                });
+            }
         }
     </script>
 </body>
