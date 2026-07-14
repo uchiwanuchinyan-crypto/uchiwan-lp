@@ -51,7 +51,14 @@
             background-color: #06C755; color: #ffffff;
             text-decoration: none; font-weight: bold;
             border-radius: 50px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
         }
+        /* 追加：信頼性担保のためのセクション */
+        .policy-section {
+            width: 90%; max-width: 500px; font-size: 0.75em;
+            color: #888; text-align: left; line-height: 1.6;
+        }
+        .policy-section h2 { font-size: 1em; color: #555; margin-bottom: 10px; }
     </style>
 </head>
 <body>
@@ -60,16 +67,27 @@
         <p class="sub-title">可愛いペットの動画を大募集中！</p>
     </div>
 
-    <!-- ここに看板犬二匹の画像を指定してください -->
     <img src="IMG_3323.JPG" alt="うちわん&うちにゃん看板犬">
     
     <a href="https://lin.ee/OXUeS2x" class="cta-button" onclick="trackLead()">友だち追加して動画を送る</a>
 
-    <script>
+    <!-- 信頼性担保情報の追加 -->
+    <div class="policy-section">
+        <h2>うちわん&うちにゃんについて</h2>
+        <p>「うちわん&うちにゃん」は、ペットの魅力を発信するための個人運営によるコンテンツ制作プロジェクトです。LINE公式アカウントを通じていただいた動画は、当プロジェクトのSNSコンテンツ内で紹介・編集されることを目的としています。</p>
+        <p><strong>動画提供に関する同意事項：</strong><br>
+        ・動画はご自身で撮影されたものに限ります。<br>
+        ・ご提供いただいた動画は、各種SNS媒体にて公開される場合があります。<br>
+        ・運営に関するお問い合わせは、LINE公式アカウント内のメッセージ機能にて承っております。</p>
+    </div>
+
+ <script>
         function trackLead() {
-            // Meta Pixelの計測
-            if(typeof fbq !== 'undefined') fbq('track', 'Lead');
-            // GA4のクリックイベント計測
+            // URLパラメーターなどからLINEのuserIdがもし取得できない環境でも、
+            // 今は一旦Meta側でのCAPI判定（external_idの一致）のみで自動マッチされるため、
+            // ブラウザ側からは直球でLeadを送信する設定でOKです！
+            if(typeof fbq !== 'undefined') fbq('track', 'Lead'); 
+            
             if(typeof gtag !== 'undefined') {
                 gtag('event', 'click_line_button', {
                     'event_category': 'button',
